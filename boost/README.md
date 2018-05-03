@@ -1,22 +1,16 @@
-# Templates for pybind11
+# Templates for Boost.Python
 
-## Installation of pybind11
+## Installation of Boost.Python
 
-Pybind11 is a header-only library. Just download the l aest version from https://github.com/pybind/pybind11/releases, extract files and place the source tree wherever you want, e.g.,
-
-```
-$ cd $HOME
-$ wget -O pybind11-2.2.3.tar.gz https://github.com/pybind/pybind11/archive/v2.2.3.tar.gz
-$ tar zxvf pybind11-2.2.3.tar.gz
-```
+In the following, it is assumed that the Boost.Python has been compiled and installed into some place by using e.g., MateriApps Installer, etc, and BOOST_ROOT environment variable has been set properly.
 
 ## How to build samples
 
 ```
-$ cd /somewhere/pycxx/pybind11
+$ cd /somewhere/pycxx/boost
 $ mkdir build
 $ cd build
-$ cmake .. -DPYBIND11_ROOT=...
+$ cmake ..
 $ make
 ```
 
@@ -24,9 +18,9 @@ Python module ```cxxmod```, python test program ```pytest```, and C++ test progr
 
 ## Options to cmake
 
-* ```PYBIND11_ROOT```: specify the place of pybind11 source tree (reqired)
+* ```BOOST_ROOT```: specify the place in which the Boost Library is installed (optional)
 
-  ex) ```-DPYBIND11_ROOT=$HOME/pybind11/```
+  ex) ```-DBOOST_ROOT=$HOME/boost/```
   
 * ```CMAKE_C_COMPILER```: specify C compiler (option)
 
@@ -48,7 +42,7 @@ Python module ```cxxmod```, python test program ```pytest```, and C++ test progr
   $ ./pytest.py
   add(1,2) = 3
   ```
-    
+  
 * C++
 
   ```
