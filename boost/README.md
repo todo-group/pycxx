@@ -22,17 +22,13 @@ Python module ```cxxmod```, python test program ```pytest```, and C++ test progr
 
   ex) ```-DBOOST_ROOT=$HOME/boost/```
   
-* ```CMAKE_C_COMPILER```: specify C compiler (option)
-
-  ex) ```-DCMAKE_C_COMPILER=gcc```
-
 * ```CMAKE_CXX_COMPILER```: spacify C++ compiler (option)
 
   ex) ```-DCMAKE_CXX_COMPILER=g++```
   
 * ```DPYTHON_EXECUTABLE```: specify Python interpreter
 
-  ex) ```-DPYTHON_EXECUTABLE=/opt/local/bin/python2```
+  ex) ```-DPYTHON_EXECUTABLE=/opt/local/bin/python3```
 
 ## Tests
 
