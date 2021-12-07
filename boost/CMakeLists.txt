@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.4)
-project(boostpython CXX)
-
-find_package(Python COMPONENTS Development)
-find_package(Boost COMPONENTS python REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS} ${Python_INCLUDE_DIRS})
+add_library(boost_cxxmod MODULE cxxmod.cpp)
+set_target_properties(boost_cxxmod PROPERTIES OUTPUT_NAME cxxmod)
+set_target_properties(boost_cxxmod PROPERTIES PREFIX "")
+target_link_libraries(boost_cxxmod ${Boost_LIBRARIES} ${Python_LIBRARIES})
 
-add_library(cxxmod MODULE cxxmod.cpp)
-target_link_libraries(cxxmod ${Boost_LIBRARIES} ${Python_LIBRARIES})
-set_target_properties(cxxmod PROPERTIES PREFIX "")
 configure_file(pytest.py.in pytest.py @ONLY)
-add_executable(cxxtest cxxtest.cpp)
+add_test(NAME boost_pytest COMMAND ${Python_EXECUTABLE} pytest.py)
+
+add_executable(boost_cxxtest cxxtest.cpp)
+set_target_properties(boost_cxxtest PROPERTIES OUTPUT_NAME cxxtest)
+add_test(NAME boost_cxxtest COMMAND cxxtest)

@@ -1,8 +1,9 @@
-cmake_minimum_required(VERSION 3.4)
-project(pybind11 CXX)
+pybind11_add_module(pybind11_cxxmod cxxmod.cpp)
+set_target_properties(pybind11_cxxmod PROPERTIES OUTPUT_NAME cxxmod)
 
-add_subdirectory(extern/pybind11)
-
-pybind11_add_module(cxxmod cxxmod.cpp)
 configure_file(pytest.py.in pytest.py @ONLY)
-add_executable(cxxtest cxxtest.cpp)
+add_test(NAME pybind11_pytest COMMAND ${Python_EXECUTABLE} pytest.py)
+
+add_executable(pybind11_cxxtest cxxtest.cpp)
+set_target_properties(pybind11_cxxtest PROPERTIES OUTPUT_NAME cxxtest)
+add_test(NAME pybind11_cxxtest COMMAND cxxtest)
