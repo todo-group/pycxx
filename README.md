@@ -1,3 +1,5 @@
+![workflow](https://github.com/todo-group/pycxx/actions/workflows/build.yml/badge.svg)
+
 # pycxx: Templates for Python-C++ bindings
 
 * boost: example for Boost.Python
