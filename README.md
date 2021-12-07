@@ -26,11 +26,11 @@ ctests
 
 ## Options to cmake
 
-* ```BOOST_ROOT```: specify the place in which the Boost Library is installed (optional)
+* ```BOOST_ROOT```: specify the place in which the Boost Library is installed
 
   ex) ```-DBOOST_ROOT=$HOME/boost/```
   
-* ```CMAKE_CXX_COMPILER```: spacify C++ compiler (option)
+* ```CMAKE_CXX_COMPILER```: spacify C++ compiler
 
   ex) ```-DCMAKE_CXX_COMPILER=g++```
   
