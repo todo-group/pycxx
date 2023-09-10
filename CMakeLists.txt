@@ -3,6 +3,8 @@ include(cmake/prefix.cmake)
 project(pycxx CXX)
 include(cmake/postfix.cmake)
 
+# set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
+
 find_package(Python COMPONENTS Interpreter Development REQUIRED)
 find_package(Boost COMPONENTS python)
 
