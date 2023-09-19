@@ -4,6 +4,7 @@
 
 * boost: example for Boost.Python
 * pybind11: example for pybind11
+* nanobind: example for nanobind
 
 ## Boost.Python
 
@@ -13,15 +14,17 @@ It is assumed that the Boost.Python has been compiled and installed into some pl
 
 Pybind11 is a header-only library. It is automatically downloaded.
 
+## Nanobind
+
+Nanobind11 is automatically downloaded.
+
 ## How to build samples and run tests
 
 ```bash
 cd /somewhere/pycxx
-mkdir build
-cd build
-cmake ..
-make
-ctests
+cmake -B build
+cmake --build build
+cmake --build build --target test
 ```
 
 ## Options to cmake
