@@ -4,6 +4,6 @@ include(FetchContent)
 FetchContent_Declare(
   nanobind
   GIT_REPOSITORY https://github.com/wjakob/nanobind.git
-  GIT_TAG b0e24d5b0ab0d518317d6b263a257ae72d4d29a2 # v1.5.2
+  GIT_TAG 784efa2a0358a4dc5432c74f5685ee026e20f2b6 # v2.2.0
 )
 list(APPEND FetchContents nanobind)

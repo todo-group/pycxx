@@ -9,6 +9,10 @@ endif()
 set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 
 find_package(Python COMPONENTS Interpreter Development REQUIRED)
+
+if(POLICY CMP0167)
+  cmake_policy(SET CMP0167 NEW)
+endif()
 find_package(Boost COMPONENTS python)
 
 include(pybind11)
