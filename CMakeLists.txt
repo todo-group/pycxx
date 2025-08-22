@@ -8,12 +8,13 @@ if(POLICY CMP0144)
 endif()
 set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 
-find_package(Python COMPONENTS Interpreter Development REQUIRED)
+find_package(Python REQUIRED COMPONENTS Interpreter Development.Module)
 
 if(POLICY CMP0167)
   cmake_policy(SET CMP0167 NEW)
 endif()
-find_package(Boost COMPONENTS python)
+set(BP_VER "${Python3_VERSION_MAJOR}${Python3_VERSION_MINOR}")
+find_package(Boost COMPONENTS python${BP_VER})
 
 include(pybind11)
 include(nanobind)
