@@ -10,11 +10,11 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 
 find_package(Python REQUIRED COMPONENTS Interpreter Development.Module)
 
-if(POLICY CMP0167)
-  cmake_policy(SET CMP0167 NEW)
-endif()
-set(BP_VER "${Python3_VERSION_MAJOR}${Python3_VERSION_MINOR}")
-find_package(Boost COMPONENTS python${BP_VER})
+set(BP_VER "${Python_VERSION_MAJOR}${Python_VERSION_MINOR}")
+find_package(Boost COMPONENTS python${BP_VER} NO_MODULE)
+if(Boost_FOUND)
+  message(STATUS "Found Boost: ${Boost_VERSION_STRING}")
+endif(Boost_FOUND)
 
 include(pybind11)
 include(nanobind)
